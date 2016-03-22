@@ -6,3 +6,9 @@ git add .gitignore
 git commit -m 'Removing node_modules from git history'
 git gc
 git push origin master --force
+
+
+# http://stackoverflow.com/questions/21230090/remove-a-deleted-folder-form-git-history
+# Another command that remove folder from histroy
+git filter-branch --index-filter \
+                  'git rm -r --cached --ignore-unmatch path/to/directory' HEAD
